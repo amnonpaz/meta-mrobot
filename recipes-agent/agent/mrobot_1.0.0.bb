@@ -17,4 +17,7 @@ S = "${WORKDIR}/git"
 
 EXTRA_OECMAKE += " -DLINT=off"
 
-FILES_${PN} += " /usr/bin/mrobot"
+FILES_${PN} += " \
+    /usr/bin/mrobot \
+    /opt/mrobot/mrobot-setup.sh \
+    /opt/mrobot/template.conf"
