@@ -15,9 +15,9 @@ DEPENDS = "mosquitto"
 
 S = "${WORKDIR}/git"
 
-EXTRA_OECMAKE += " -DLINT=off"
+EXTRA_OECMAKE:append = " -DLINT=off"
 
-FILES_${PN} += " \
+FILES:${PN} = " \
     /usr/bin/mrobot \
     /opt/mrobot/mrobot-setup.sh \
     /opt/mrobot/template.conf"
