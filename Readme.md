@@ -41,5 +41,14 @@ Build:
 bitbake mrobot-rpi0-w
 ```
 ## Notes
+### WiFi password
+For automatically connecting to a WiFi network, the network's SSID and password should be set in `recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf`.
+To generate a configuration file with hashed password, execute:
+```
+wpa_passphrase <SSID> <Password>
+```
+### UART enable
+As noted in `meta-raspberrypi`, enabling UART on the RPI-0-W causes performance issues. If UART is not needed, it is recommended to remove this flag.
+### Commercial license
 Accepting "commercial" licenses is required for allowing installation of gstreamer ugly plugings. If this package is not used, then `commercial` can be removed from the accepted list.
 
