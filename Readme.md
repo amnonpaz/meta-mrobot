@@ -47,7 +47,7 @@ MACHINE = "raspberrypi0-wifi"
 
 Build:
 ```
-bitbake mrobot-rpi0-w
+bitbake mrobot-rpi
 ```
 
 ## Notes
