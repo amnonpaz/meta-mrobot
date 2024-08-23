@@ -11,10 +11,13 @@ git clone https://git.yoctoproject.org/meta-raspberrypi/ -b mickledore poky/meta
 git clone https://github.com/openembedded/openembedded-core.git  -b mickledore poky/openembedded-core
 git clone git@github.com:amnonpaz/meta-mrobot.git poky/meta-mrobot 
 ```
+
 Execute:
 ```
+
 source ./poky/oe-init-build-env rpi-build
 ```
+
 Edit conf/bblayers.conf:
 ```
 # POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
@@ -25,21 +28,28 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  /home/amnon/yocto-mickledore/poky/meta \
-  /home/amnon/yocto-mickledore/poky/meta-poky \
-  /home/amnon/yocto-mickledore/poky/meta-yocto-bsp \
-  /home/amnon/yocto-mickledore/poky/meta-raspberrypi \
-  /home/amnon/yocto-mickledore/poky/meta-openembedded/meta-multimedia \
-  /home/amnon/yocto-mickledore/poky/meta-openembedded/meta-networking \
-  /home/amnon/yocto-mickledore/poky/meta-openembedded/meta-oe \
-  /home/amnon/yocto-mickledore/poky/meta-openembedded/meta-python \
-  /home/amnon/yocto-mickledore/poky/meta-mrobot \
+  /home/amnon/workspace/poky/meta \
+  /home/amnon/workspace/poky/meta-poky \
+  /home/amnon/workspace/poky/meta-yocto-bsp \
+  /home/amnon/workspace/poky/meta-raspberrypi \
+  /home/amnon/workspace/poky/meta-openembedded/meta-multimedia \
+  /home/amnon/workspace/poky/meta-openembedded/meta-networking \
+  /home/amnon/workspace/poky/meta-openembedded/meta-oe \
+  /home/amnon/workspace/poky/meta-openembedded/meta-python \
+  /home/amnon/workspace/poky/meta-mrobot \
   "
 ```
+
+Edit conf/local.conf, and set MACHINE to the proper machine type. For RPI zero w:
+```
+MACHINE = "raspberrypi0-wifi"
+```
+
 Build:
 ```
 bitbake mrobot-rpi0-w
 ```
+
 ## Notes
 ### WiFi password
 For automatically connecting to a WiFi network, the network's SSID and password should be set in `recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf`.
@@ -47,8 +57,10 @@ To generate a configuration file with hashed password, execute:
 ```
 wpa_passphrase <SSID> <Password>
 ```
+
 ### UART enable
 As noted in `meta-raspberrypi`, enabling UART on the RPI-0-W causes performance issues. If UART is not needed, it is recommended to remove this flag.
+
 ### Commercial license
 Accepting "commercial" licenses is required for allowing installation of gstreamer ugly plugings. If this package is not used, then `commercial` can be removed from the accepted list.
 

@@ -1,8 +1,4 @@
 require recipes-core/images/core-image-base.bb
-#require recipes-core/images/meta-oe-image-base.bb
-#require recipes-extended/images/core-image-full-cmdline.bb
-
-MACHINE = "raspberrypi0-wifi"
 
 IMAGE_FEATURES += " debug-tweaks ssh-server-openssh"
 
@@ -20,6 +16,7 @@ IMAGE_INSTALL += " mrobot \
                    iw \
                    wpa-supplicant \
                    bluez5 \
+                   hostapd \
                  "
 MACHINE_FEATURES += " wifi"
 DISTRO_FEATURES += " wifi bluetooth systemd"
