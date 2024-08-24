@@ -1,0 +1,12 @@
+[Unit]
+Description=Video Streamer Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/bin/video_streamer.py /etc/video_streamer/config.json
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

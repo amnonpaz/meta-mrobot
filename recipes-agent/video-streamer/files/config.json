@@ -1,0 +1,12 @@
+{
+    "video": {
+        "device": "/dev/video0",
+        "width": 640,
+        "height": 480
+    },
+    "server": {
+        "host": "localhost",
+        "port": 6666
+    }
+}
+

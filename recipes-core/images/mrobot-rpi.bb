@@ -3,6 +3,7 @@ require recipes-core/images/core-image-base.bb
 IMAGE_FEATURES += " debug-tweaks ssh-server-openssh"
 
 IMAGE_INSTALL += " mrobot \
+                   video-streamer \
                    i2c-tools \
                    vim \
                    gstreamer1.0 \
