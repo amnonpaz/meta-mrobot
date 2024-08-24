@@ -49,6 +49,13 @@ Build:
 bitbake mrobot-rpi
 ```
 
+Flashing an SD:
+CAUTION: Destination device should be set to /dev/sdX, where sdX is the SD device on your machine. Setting this to the
+wrong value may delete other drives, cause lose of data and even bricking your machine.
+```bash
+bunzip2 -c rpi-build/tmp/deploy/images/raspberrypi0-wifi/mrobot-rpi-raspberrypi0-wifi.wic.bz2 | sudo dd of=/dev/sdX bs=10M status=progress
+```
+
 ## Notes
 ### WiFi password
 For automatically connecting to a WiFi network, the network's SSID and password should be set in `recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf`.
