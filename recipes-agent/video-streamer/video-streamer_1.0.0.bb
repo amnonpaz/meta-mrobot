@@ -14,25 +14,26 @@ S = "${WORKDIR}/git"
 
 inherit setuptools3 systemd
 
-RDEPENDS_${PN} = "\
-    python3 \
-    python3-gi \
+RDEPENDS:${PN} = "\
+    ${PYTHON_PN} \
+    ${PYTHON_PN}-pygobject \
+    ${PYTHON_PN}-logging \
+    ${PYTHON_PN}-json \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
 "
 
-FILES_${PN} += "${systemd_unitdir}"
-FILES_${PN} += "${systemd_unitdir}/system/"
-FILES_${PN} += "${systemd_unitdir}/system/video-streamer.service"
-FILES_${PN} += "${sysconfdir}/video-streamer/config.json"
+FILES:${PN} += "${systemd_unitdir}"
+FILES:${PN} += "${systemd_unitdir}/system/"
+FILES:${PN} += "${systemd_unitdir}/system/video-streamer.service"
+FILES:${PN} += "${sysconfdir}/video-streamer/config.json"
 
-do_install() {
-    install -d ${D}${bindir}
+do_install:append() {
+    #install -d ${D}${bindir}
     install -d ${D}${sysconfdir}/video-streamer
     install -d ${D}${systemd_unitdir}/system
 
-    install -m 0755 ${S}/main.py ${D}${bindir}/video_streamer.py
     install -m 0644 ${WORKDIR}/config.json ${D}${sysconfdir}/video-streamer/config.json
     install -m 0644 ${WORKDIR}/video-streamer.service ${D}${systemd_unitdir}/system/video-streamer.service
 }
