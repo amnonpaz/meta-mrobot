@@ -14,7 +14,6 @@ git clone git@github.com:amnonpaz/meta-mrobot.git poky/meta-mrobot
 
 Execute:
 ```
-
 source ./poky/oe-init-build-env rpi-build
 ```
 
@@ -62,5 +61,5 @@ wpa_passphrase <SSID> <Password>
 As noted in `meta-raspberrypi`, enabling UART on the RPI-0-W causes performance issues. If UART is not needed, it is recommended to remove this flag.
 
 ### Commercial license
-Accepting "commercial" licenses is required for allowing installation of gstreamer ugly plugings. If this package is not used, then `commercial` can be removed from the accepted list.
+Accepting "commercial" licenses is required for allowing installation of gstreamer libav & ugly plugings. If these plugins packages are not used, then `commercial` can be removed from the accepted list.
 
