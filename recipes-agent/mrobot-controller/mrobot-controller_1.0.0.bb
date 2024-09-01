@@ -19,6 +19,9 @@ RDEPENDS:${PN} = "\
     ${PYTHON_PN}-pygobject \
     ${PYTHON_PN}-logging \
     ${PYTHON_PN}-json \
+    ${PYTHON_PN}-websockets \
+    ${PYTHON_PN}-asyncio \
+    ${PYTHON_PN}-msgpack \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
