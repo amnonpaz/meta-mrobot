@@ -3,13 +3,14 @@ A layer for integrating the mrobot project into Yocto build.
 Supports Mickeldore. Might work on previous versions down to Hardknott (tested only with Mickeldore).
 
 ## Building
-Assuming all Yocto's dependies are installed. 
+Assuming all Yocto's dependies are installed. The project "yocto-tools" contains a Dockerfile for creating a container
+with all the tools required for Yocto build.
 Clone poky and required layers:
 ```
 git clone git://git.yoctoproject.org/poky -b mickledore
-git clone https://git.yoctoproject.org/meta-raspberrypi/ -b mickledore poky/meta-raspberrypi/ 
-git clone https://github.com/openembedded/openembedded-core.git  -b mickledore poky/openembedded-core
-git clone git@github.com:amnonpaz/meta-mrobot.git poky/meta-mrobot 
+git clone https://git.yoctoproject.org/meta-raspberrypi/ -b mickledore poky/meta-raspberrypi/
+git clone https://github.com/openembedded/openembedded-core.git -b mickledore poky/openembedded-core
+git clone https://github.com/amnonpaz/meta-mrobot.git -b mickledore poky/meta-mrobot
 ```
 
 Execute:
