@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 SRCBRANCH = "master"
 SRC_URI = "git://github.com/amnonpaz/mrobot-controller.git;protocol=https;branch=${SRCBRANCH};user=git"
-SRCREV = "${AUTOREV}"
+SRCREV = "ac3521b72661cbcbeaf488d1da34343f0d980ca9"
 
 SRC_URI += " file://config.json"
 SRC_URI += " file://mrobot-controller.service"
@@ -22,6 +22,9 @@ RDEPENDS:${PN} = "\
     ${PYTHON_PN}-websockets \
     ${PYTHON_PN}-asyncio \
     ${PYTHON_PN}-msgpack \
+    ${PYTHON_PN}-zeroconf \
+    ${PYTHON_PN}-netifaces \
+    ${PYTHON_PN}-pillow \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \

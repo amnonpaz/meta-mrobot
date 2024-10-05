@@ -4,9 +4,8 @@
         "width": 640,
         "height": 480
     },
-    "server": {
-        "host": "localhost",
-        "port": 6666
+    "app-server": {
+        "port": 8877
     }
 }
 

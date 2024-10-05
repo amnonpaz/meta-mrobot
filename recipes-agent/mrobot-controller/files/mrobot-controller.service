@@ -3,7 +3,7 @@ Description=Video Streamer Service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/video-streamer /etc/video-streamer/config.json
+ExecStart=/usr/bin/mrobot-controller /etc/mrobot-controller/config.json
 Restart=on-failure
 User=root
 Group=root
