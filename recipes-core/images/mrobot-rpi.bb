@@ -17,6 +17,7 @@ IMAGE_INSTALL += " mrobot-controller \
                    wpa-supplicant \
                    bluez5 \
                    hostapd \
+                   libgpiod \
                  "
 MACHINE_FEATURES += " wifi"
 DISTRO_FEATURES += " wifi bluetooth systemd"

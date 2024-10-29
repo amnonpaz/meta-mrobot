@@ -25,6 +25,7 @@ RDEPENDS:${PN} = "\
     ${PYTHON_PN}-zeroconf \
     ${PYTHON_PN}-netifaces \
     ${PYTHON_PN}-pillow \
+    ${PYTHON_PN}-gpiod \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
