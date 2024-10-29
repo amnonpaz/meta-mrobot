@@ -21,3 +21,4 @@ IMAGE_INSTALL += " mrobot-controller \
 MACHINE_FEATURES += " wifi"
 DISTRO_FEATURES += " wifi bluetooth systemd"
 
+IMAGE_ROOTFS_SIZE = "1073741824"
