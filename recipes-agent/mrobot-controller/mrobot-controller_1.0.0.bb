@@ -45,4 +45,4 @@ do_install:append() {
     install -m 0644 ${WORKDIR}/mrobot-controller.service ${D}${systemd_unitdir}/system/mrobot-controller.service
 }
 
-SYSTEMD_SERVICE_${PN} = "mrobot-controller.service"
+SYSTEMD_SERVICE:${PN} = "mrobot-controller.service"
